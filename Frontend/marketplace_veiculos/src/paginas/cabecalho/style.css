@@ -1,0 +1,22 @@
+.cabecalho{
+    padding: 1rem;
+    width: 100%;
+    background-color: black;
+}
+
+li{
+    display: inline;
+    margin: 0 1rem;
+}
+
+header nav ul {
+    display: flex;
+    justify-content: center;
+}
+
+header li{
+    list-style-type: none;
+}
+a{
+    color: aliceblue;
+}
