@@ -1,0 +1,16 @@
+.lista-cards{
+    display: flex;
+    justify-content: center;
+}
+
+.card{
+    display: inline;
+    margin: 0 1rem;
+}
+
+.container-card{
+    border: 2px solid rgb(113, 113, 119);
+    border-radius: 0.5rem;
+    width: 20rem;
+    height: 8rem;
+}

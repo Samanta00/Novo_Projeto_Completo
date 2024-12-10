@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
-
+import './style.css'
 
 
 
@@ -40,6 +40,7 @@ const Dashboard = () => {
                         </ul>
 
                     </div>
+                    <div>
                         <h3>Painel</h3>
                         <div>
                             <ul>
@@ -47,30 +48,55 @@ const Dashboard = () => {
                                 <li>Relatórios</li>
                             </ul>
                         </div>
-                    <div>
-                        <h4>Receita Total</h4>
                     </div>
 
-                    <div>
-                        <h4>Maior Venda</h4>
-                    </div>
+                    <ul className="lista-cards">
 
-                    <div>
-                        <h4>Vendas</h4>
-                    </div>
+                        <li className="card">
+                            <div className="container-card">
+                                <h4>Receita Total</h4>
+                                <h5>$ 45.231,89</h5>
+                                <p>+20,1% em relação ao mês passado</p>
+                            </div>
+                        </li>
 
-                    <div>
-                        <h4>Compras realizadas</h4>
-                    </div>
 
-                    <BarChart width={600} height={300} data={data}>
-                            <CartesianGrid strokeDasharray="3 3" />
-                            <XAxis dataKey="name" />
-                            <YAxis />
-                            <Tooltip />
-                            <Legend />
-                            <Bar dataKey="vendas" fill="#8884d8" />
-                    </BarChart>
+                        <li className="card">
+                            <div className="container-card">
+                                <h4>Maior Venda</h4>
+                                <h5>$ 45.231,89</h5>
+                                <p>+20,1% em relação ao mês passado</p>
+                            </div>
+                        </li>
+
+
+                        <li className="card">
+                            <div className="container-card">
+                                <h4>Vendas</h4>
+                                <h5>$ 45.231,89</h5>
+                                <p>+20,1% em relação ao mês passado</p>
+                            </div>
+                        </li>
+
+
+                        <li className="card">
+                            <div className="container-card">
+                                <h4>Compras realizadas</h4>
+                                <h5>$ 45.231,89</h5>
+                                <p>+20,1% em relação ao mês passado</p>
+                            </div>
+                        </li>
+
+
+
+                    </ul>
+
+<div>
+
+</div>
+
+
+
 
 
                 </div>
