@@ -14,3 +14,24 @@
     width: 20rem;
     height: 8rem;
 }
+
+.containers-classificacao {
+    display: flex; /* Torna os itens filhos flexíveis */
+    justify-content: center; /* Centraliza os itens horizontalmente */
+    align-items: center; /* Centraliza os itens verticalmente */
+    gap: 20px; /* Espaço entre os containers */
+  }
+  
+  .container-grafico,
+  .container-vendas {
+    background-color: #f9f9f9; /* Cor de fundo para destacar os containers */
+    padding: 20px; /* Espaçamento interno */
+    border: 2px solid rgb(113, 113, 119); /* Borda para estilização */
+    border-radius: 10px; /* Arredondamento das bordas */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para destaque */
+  }
+
+.container-card{
+    text-align: center;
+  
+}
