@@ -1,5 +1,6 @@
 import React from "react";
 import './style.css'
+import Carros from "../carros";
 
 const Cabecalho = () => {
     return (
@@ -13,7 +14,7 @@ const Cabecalho = () => {
                     </li>
                     <ul>
                         <li>
-                            <a href="#">Carros</a>
+                            <a href="/carros" >Carros</a>
                         </li>
                         <li><a href="#">Motos</a></li>
                         <li><a href="#">Aviões</a></li>

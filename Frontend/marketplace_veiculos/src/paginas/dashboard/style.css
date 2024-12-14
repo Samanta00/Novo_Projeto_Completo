@@ -1,3 +1,10 @@
+main {
+    font-family: Arial, sans-serif;
+    padding: 1rem;
+    /* background-color: #1f1e1e; */
+}
+
+
 .lista-cards{
     display: flex;
     justify-content: center;
@@ -13,6 +20,24 @@
     border-radius: 0.5rem;
     width: 20rem;
     height: 8rem;
+}
+
+.painel{
+margin: 2rem;
+}
+
+.container-pai{
+    border: 2px solid rgb(113, 113, 119);
+}
+
+.painel{
+    justify-content: space-between; /* Espaço entre o painel e a lista */
+    align-items: flex-start; /* Alinha os itens no topo */
+    gap: 2rem; /* Espaçamento entre os elementos */
+}
+
+.container-filtro{
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .containers-classificacao {
