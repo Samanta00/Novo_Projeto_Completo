@@ -3,7 +3,7 @@
 import React from'react';
 import Cabecalho from './paginas/cabecalho';
 import Dashboard from './paginas/dashboard';
-import AppRouter from './router';
+import AppRouter from './rotas/router';
 
 function App() {
   return (
