@@ -23,7 +23,7 @@ from produto.Services.services import ProductsService
 urlpatterns = [
     path('produtos/', ProductsService.listarProduto, name='listar_produtos'),
     path('produtos/<int:product_id>/', ProductsService.obterProduto, name='obter_produto'),
-    path('produtos/criar/', ProductsService.cadastrarProduto, name='cadastrar_produto'),
-    path('produtos/<int:product_id>/editar/', ProductsService.editandoProduto, name='editar_produto'),  # Adicionei a barra aqui
+    path('produtos/criar/', ProdutoView.as_view(), name='cadastrar_produto'),  # Usando ProdutoView como CBV
+    path('produtos/<int:product_id>/editar/', ProductsService.editandoProduto, name='editar_produto'),
     path('produtos/<int:product_id>/deletar/', ProductsService.deletarProduto, name='deletar_produto'),
 ]
