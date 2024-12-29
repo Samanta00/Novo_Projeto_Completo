@@ -1,6 +1,6 @@
 import React from "react";
-import './style.css'
-import Carros from "../carros";
+import { Link } from "react-router-dom";
+import './style.css';
 
 const Cabecalho = () => {
     return (
@@ -8,29 +8,22 @@ const Cabecalho = () => {
             <nav>
                 <ul>
                     <li>
-                        <a href="#">
-                            Veículos
-                        </a>
+                        <span>Veículos</span>
+                        <ul>
+                            <li><Link to="/carros">Carros</Link></li>
+                            <li><Link to="/motos">Motos</Link></li>
+                            <li><Link to="/avioes">Aviões</Link></li>     
+                            <li><Link to="/leilao">Leilão</Link></li>
+                            <li><Link to="/novos">Novos</Link></li>
+                            <li><Link to="/pos-vendas">Pós Vendas</Link></li>
+                            <li><Link to="/contato">Contato</Link></li>
+                            <li><Link to="/faq">FAQ</Link></li>
+                        </ul>
                     </li>
-                    <ul>
-                        <li>
-                            <a href="/carros" >Carros</a>
-                        </li>
-                        <li><a href="#">Motos</a></li>
-                        <li><a href="#">Aviões</a></li>
-                    </ul>
-                    <li><a href="#">Leilão</a></li>
-                    <li><a href="#">Novos</a></li>
-                    <li><a href="#">Pós Vendas</a></li>
-                    <li><a href="#">Contato</a></li>
-                    <li><a href="#">FAQ</a></li>
                 </ul>
-
             </nav>
-
         </header>
-
-    )
-}
+    );
+};
 
 export default Cabecalho;
