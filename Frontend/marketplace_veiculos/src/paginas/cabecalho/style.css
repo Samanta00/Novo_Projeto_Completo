@@ -7,6 +7,12 @@
 li{
     display: inline;
     margin: 0 1rem;
+    padding-top: 1rem;
+   
+}
+
+.titulo-link{
+    color:aliceblue 
 }
 
 header nav ul {

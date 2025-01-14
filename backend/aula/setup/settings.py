@@ -31,6 +31,8 @@ ALLOWED_HOSTS = [
     '127.0.0.1',
     ]
 
+SITE_ID = 1
+
 
 # Application definition
 
@@ -43,6 +45,17 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'produto',
     'corsheaders',
+    'allauth',
+    'allauth.socialaccount.providers.github',
+    'allauth.account',
+    'allauth.socialaccount',
+    'django.contrib.sites',
+    'social_django',
+]
+
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
 ]
 
 MIDDLEWARE = [
@@ -54,6 +67,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'corsheaders.middleware.CorsMiddleware',
+    "allauth.account.middleware.AccountMiddleware",
 ]
 
 CORS_ALLOWED_ORIGINS = [
@@ -130,9 +144,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'pt-br'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Sao_Paulo'
 
 USE_I18N = True
 
@@ -148,3 +162,29 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+#credenciais do provedor do sociallAccount
+SOCIALACCOUNT_PROVIDERS = {
+    'github': {
+        'APP': {
+            'client_id': 'Ov23liOf1bbtKsM0NXew',
+            'secret': 'e5ea2afd4e840bc0af81c915f1fff24672d2bde3',
+            'key': ''
+        },
+        # Configurações extras (opcional)
+        'SCOPE': [
+            'user',  # Permissão para ler dados do perfil do GitHub
+            'repo'   # (Opcional) Permissão para acessar repositórios
+        ],
+        'AUTH_PARAMS': {
+            'allow_signup': 'false'  # (Opcional) Desativar cadastro automático
+        },
+    }
+}
+
+# Configurações do GitHub OAuth
+LOGIN_REDIRECT_URL = 'http://localhost:3000/members/'
+LOGOUT_REDIRECT_URL = 'http://localhost:3000/login'
+SOCIALACCOUNT_LOGIN_ON_GET = True
+ACCOUNT_LOGOUT_ON_GET = True

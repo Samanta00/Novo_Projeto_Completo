@@ -18,12 +18,18 @@ from django.contrib import admin
 from django.urls import path
 from produto.views import ProdutoView
 from produto.Services.services import ProductsService
+from django.urls import include, path
 
 
 urlpatterns = [
+    path('admin/', admin.site.urls),
     path('produtos/', ProductsService.listarProduto, name='listar_produtos'),
     path('produtos/<int:product_id>/', ProductsService.obterProduto, name='obter_produto'),
     path('produtos/criar/', ProdutoView.as_view(), name='cadastrar_produto'),  # Usando ProdutoView como CBV
     path('produtos/<int:product_id>/editar/', ProductsService.editandoProduto, name='editar_produto'),
     path('produtos/<int:product_id>/deletar/', ProductsService.deletarProduto, name='deletar_produto'),
+    path('accounts/', include('allauth.urls')),
+    path('auth/', ProductsService.oauth, name='oauth'),
+    path('members/', ProductsService.login_view, name='members')
+    
 ]

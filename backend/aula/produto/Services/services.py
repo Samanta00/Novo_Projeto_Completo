@@ -6,11 +6,44 @@ import json
 from django.views.decorators.csrf import csrf_exempt
 import logging
 logger = logging.getLogger(__name__)
+from django.shortcuts import redirect
+
 
 
 
 @csrf_exempt
 class ProductsService:
+    logger = logging.getLogger(__name__)
+
+    @staticmethod
+    def oauth(request):
+        """
+        Redireciona o usuário para o fluxo de autenticação do GitHub OAuth.
+
+        :param request: Objeto HTTP da requisição.
+        :return: Redirecionamento para a URL de autorização do GitHub.
+        """
+        try:
+            client_id = 'Ov23liOf1bbtKsM0NXew'
+            redirect_uri = 'http://localhost:8001/accounts/github/login/callback/'
+            scope = 'read:user'
+
+            # Monta a URL de autorização do GitHub
+            auth_url = (
+                f'https://github.com/login/oauth/authorize'
+                f'?client_id={client_id}&redirect_uri={redirect_uri}&scope={scope}'
+            )
+
+            return HttpResponseRedirect(auth_url)
+        except Exception as e:
+            # Registra o erro e retorna uma mensagem de erro ao cliente
+            ProductsService.logger.error(f"Erro no fluxo OAuth: {e}")
+            return JsonResponse({"error": "Erro ao processar o fluxo OAuth"}, status=500)
+        
+    def login_view(request):
+        # Se a autenticação for bem-sucedida
+        return redirect('http://localhost:3000/members/')
+
     @staticmethod
     def listarProduto(request):
         produtos = Produto.objects.all().values()
